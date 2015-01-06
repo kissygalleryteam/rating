@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>rating</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com-prettify.css">
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.css">
+    <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="http://cdn.staticfile.org/prettify/r298/prettify.min.js"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" data-config="{combine:true}"></script>
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div id="header"><a href="http://docs.kissyui.com/" class="logo">kissy</a>
+      <nav><a href="http://docs.kissyui.com/1.4/docs/html/coms.html">优秀组件推荐</a></nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3 bs-docs-sidebar">
+          <ul data-spy="affix" data-offset-top="0" class="nav nav-list bs-docs-sidenav"></ul>
+        </div>
+        <div class="span9 bs-docs-content">
+          <h1 data-id="undefined" class="title">rating</h1>
+          <p class="author-wrapper"><span>组件有问题？旺旺联系作者：</span><a href="https://github.com/minghe" target="_blank" data-name="剑平" class="author"><img src="https://avatars.githubusercontent.com/u/724588?v=3&amp;s=60" alt="剑平"></a><span class="author-name">剑平</span><a href="https://github.com/qiaohua" target="_blank" data-name="乔花" class="author"><img src="https://avatars.githubusercontent.com/u/4487455?v=2&amp;s=60" alt="乔花"></a><span class="author-name">乔花</span>
+          </p>
+          <div class="common-link"><a href="../demo/index.html" target="_blank" class="demo">示例</a><a href="https://github.com/kissygalleryteam/rating" target="_blank" class="source">源码</a></div>
+          <p class="com-info"><span class="info-label">View</span><span data-com="rating" class="J_View">289</span></p>
+          <p class="com-info"><span class="info-label">所属分类</span><a href="http://kpm.taobao.net/list/表单">表单</a>
+          </p>
+          <p class="com-info"><span class="info-label">kissy版本</span><span>1.4.X</span>
+          </p><h2 id="-">综述</h2>
+<p>starrating是简单易用的星级打分组件。</p>
+<p>作者：乔花、剑平å</p>
+<h2 id="-">快速使用</h2>
+<h3 id="-">初始化组件</h3>
+<p>html结构</p>
+<pre><code>&lt;div id=&quot;J_Rating&quot; class=&quot;rating-bd s-demo&quot;&gt;
+    &lt;div class=&quot;shop-rating&quot;&gt;
+        &lt;span class=&quot;title&quot;&gt;设计美观:&lt;/span&gt;
+        &lt;ul class=&quot;rating-level&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; data-star-value=&quot;1&quot; class=&quot;one-star&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; data-star-value=&quot;2&quot; class=&quot;two-stars&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; data-star-value=&quot;3&quot; class=&quot;three-stars&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; data-star-value=&quot;4&quot; class=&quot;four-stars&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; data-star-value=&quot;5&quot; class=&quot;five-stars&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;span class=&quot;result&quot;&gt;&lt;/span&gt;
+        &lt;input type=&quot;hidden&quot; size=&quot;2&quot; value=&quot;&quot; name=&quot;dsr1&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;rating-pop-tip&quot; style=&quot;display: none;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>javascript代码</p>
+<pre><code>KISSY.use(&#39;kg/rating/2.0.0/index,kg/rating/2.0.0/index.css&#39;, function (S, Rating) {
+    var a = new Rating({
+        container: &#39;#J_Rating&#39;,
+        reason: [[&#39;太丑了&#39;, &#39;不好看&#39;, &#39;一般般&#39;, &#39;很漂亮&#39;, &#39;哇!非常漂亮&#39;],
+            [&#39;太难维护了&#39;, &#39;不好维护&#39;, &#39;一般般&#39;, &#39;维护很简单&#39;, &#39;维护超级容易&#39;],
+            [&#39;太慢了&#39;, &#39;有点小慢&#39;, &#39;一般般&#39;, &#39;挺快的&#39;, &#39;超级快!&#39;]],
+        level: [&#39;非常不满意&#39;,&#39;很不满意&#39;,&#39;一般&#39;,&#39;很满意&#39;,&#39;非常满意&#39;]
+    });
+    a.on(&#39;rating&#39;, function(ev) {
+        S.log(&#39;给第&#39; + (ev.idx+1) + &#39;项打分为&#39; + ev.score);
+    });
+})
+</code></pre>
+          <div style="display:none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=36378479" charset="UTF-8"></script></div>
+          <script src="http://docs.kissyui.com/1.4/source/guideline/templates/assets/com.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
