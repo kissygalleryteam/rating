@@ -1,1 +1,0 @@
-KISSY.config("modules",{"kg/rating/2.0.0/index":{requires:["node","base"]}});
